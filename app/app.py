@@ -43,3 +43,15 @@ input_data = input_data[model_columns]
 if st.button("Predict Crime Type"):
     prediction = model.predict(input_data)
     st.success(f"Predicted Crime Domain: {prediction[0]}")
+
+
+uploaded_file = st.file_uploader("Upload Dataset", type=["csv"])
+
+if uploaded_file:
+    df = pd.read_csv(uploaded_file)
+
+    st.subheader("📊 Dataset Preview")
+    st.write(df.head())
+
+    st.subheader("📈 Crime Distribution")
+    st.bar_chart(df["Crime Domain"].value_counts())
