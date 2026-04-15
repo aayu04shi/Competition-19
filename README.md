@@ -27,7 +27,7 @@ This project focuses on analyzing and predicting crime patterns in India using M
 - Matplotlib, Seaborn
 - Scikit-learn
 - Streamlit
-
+- 
 ---
 
 ## 📂 Project Structure
@@ -99,7 +99,7 @@ crime-pattern-analysis-india/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/crime-analysis.git
+git clone https://github.com/aayu04shi/Crime-Anaylis-in-India.git
 cd crime-analysis
 ```
 
@@ -137,11 +137,11 @@ See `requirements.txt` for the full list. Key libraries:
 ## 📁 Repository Structure
 
 ```
-crime-pattern-analysis/
+crime-analysis/
 ├── data/
 │   └── crime_dataset_india.csv       # Raw dataset
 ├── notebooks/
-│   └── ML_Model_CrimePatternAnalysis.ipynb  # Main Jupyter notebook
+│   └── ML_Model_CrimeAnalysis.ipynb  # Main Jupyter notebook
 ├── outputs/                          # Saved plots and results
 ├── src/                              # (Optional) Modular Python scripts
 ├── requirements.txt                  # Python dependencies
