@@ -2,29 +2,44 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-st.title("🚔 Crime Pattern Analysis")
+st.set_page_config(page_title="Crime Analysis", layout="centered")
 
-uploaded_file = st.file_uploader("Upload Dataset", type=["csv"])
+st.title("🚔 Crime Pattern Analysis in India")
 
-if uploaded_file:
-    df = pd.read_csv(uploaded_file)
-    st.write(df.head())
+# Load model
+model = pickle.load(open("models/trained_model.pkl", "rb"))
 
-    st.write("Columns:", df.columns)
+st.subheader("Enter Crime Details")
 
-    try:
-        model = pickle.load(open("models/trained_model.pkl", "rb"))
+# Inputs (only useful ones)
+city = st.selectbox("City", ["Mumbai", "Delhi", "Bangalore", "Pune"])
+victim_age = st.number_input("Victim Age", min_value=0, max_value=100)
+gender = st.selectbox("Victim Gender", ["Male", "Female"])
+weapon = st.selectbox("Weapon Used", ["Knife", "Gun", "None", "Unknown"])
+police = st.number_input("Police Deployed", min_value=0)
 
-        st.subheader("Prediction")
+# Create dataframe
+input_data = pd.DataFrame({
+    "City": [city],
+    "Victim Age": [victim_age],
+    "Victim Gender": [gender],
+    "Weapon Used": [weapon],
+    "Police Deployed": [police]
+})
 
-        input_data = []
-        for col in df.columns[:-1]:
-            val = st.number_input(f"{col}", value=0)
-            input_data.append(val)
+# Encode like training
+input_data = pd.get_dummies(input_data)
 
-        if st.button("Predict"):
-            result = model.predict([input_data])
-            st.success(result)
+# Align with training columns
+model_columns = pickle.load(open("models/trained_model.pkl", "rb")).feature_names_in_
 
-    except:
-        st.warning("Model not trained yet")
+for col in model_columns:
+    if col not in input_data:
+        input_data[col] = 0
+
+input_data = input_data[model_columns]
+
+# Predict
+if st.button("Predict Crime Type"):
+    prediction = model.predict(input_data)
+    st.success(f"Predicted Crime Domain: {prediction[0]}")
