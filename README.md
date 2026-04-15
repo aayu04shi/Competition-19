@@ -27,7 +27,6 @@ This project focuses on analyzing and predicting crime patterns in India using M
 - Matplotlib, Seaborn
 - Scikit-learn
 - Streamlit
-- Jupyter Notebook
 
 ---
 
@@ -93,6 +92,45 @@ crime-pattern-analysis-india/
 ### 4. Clustering (K-Means)
 - Grouped cities into 5 clusters based on crime count
 - Visualized hotspot clusters on a scatter plot
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/crime-analysis.git
+cd crime-analysis
+```
+
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the Notebook
+```bash
+jupyter notebook notebooks/ML_Model_CrimeAnalysis.ipynb
+```
+---
+
+## 📦 Requirements
+
+See `requirements.txt` for the full list. Key libraries:
+- `pandas`, `numpy` – Data manipulation
+- `matplotlib`, `seaborn` – Visualization
+- `scikit-learn` – ML models (Random Forest, K-Means)
+- `jupyter` – Notebook environment
+
+---
+
+## 📈 Results
+
+| Metric | Value |
+|---|---|
+| Model | Random Forest Classifier |
+| Number of Clusters | 5 (K-Means) |
+| Target Variable | Crime Domain |
 
 ---
 
