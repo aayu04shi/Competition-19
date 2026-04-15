@@ -137,16 +137,35 @@ See `requirements.txt` for the full list. Key libraries:
 ## 📁 Repository Structure
 
 ```
-crime-analysis/
+Crime-Analysis-in-India/
+│
+├── README.md                         # Project documentation
+├── requirements.txt                  # Dependencies
+├── .gitignore                        # Ignored files
+├── main.py                           # ML pipeline runner
+│
 ├── data/
-│   └── crime_dataset_india.csv       # Raw dataset
+│   └── crime_dataset_india.csv       # Dataset
+│
 ├── notebooks/
-│   └── ML_Model_CrimeAnalysis.ipynb  # Main Jupyter notebook
-├── outputs/                          # Saved plots and results
-├── src/                              # (Optional) Modular Python scripts
-├── requirements.txt                  # Python dependencies
-├── .gitignore                        # Files to ignore
-└── README.md                         # Project documentation
+│   └── ML_Model_CrimePatternAnalysis.ipynb   # Notebook
+│
+├── src/
+│   ├── data_preprocessing.py         # Preprocessing
+│   ├── train_model.py                # Model training
+│   └── evaluate.py                   # Evaluation
+│
+├── models/
+│   └── README.txt                    # Note about external model
+│
+├── app/
+│   └── app.py                        # Streamlit UI
+│
+├── outputs/
+│   ├── dataset_preview.png           # Dataset screenshot
+│   ├── graph.png                     # Visualization
+│   ├── prediction.png                # Model output
+│   └── ui.pdf                        # UI screens / report
 ```
 
 ---
