@@ -161,6 +161,10 @@ crime-analysis/
 ### 🔹 Crime Analysis Graph
 ![Graph](outputs/graph.png)
 
+## 📄 UI Preview
+
+![View UI Screens](outputs/ui.pdf)
+
 ---
 
 ## 👥 Contributors
