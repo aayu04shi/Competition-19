@@ -25,6 +25,6 @@ def train_model(df):
     model.fit(X_train, y_train)
 
     # ✅ SAVE MODEL (COMPRESSED)
-    joblib.dump(model, "models/trained_model.pkl", compress=9)
+    joblib.dump(model, "models/trained_model.pkl", compress=3)
 
     return model, X_test, y_test
